@@ -1,0 +1,275 @@
+/* style.css */
+
+/* General Styling */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  padding: 15px;
+  background: #1a1a2e; /* Darker background */
+  color: #e0e0e0; /* Light text color */
+  width: 400px; /* Fixed width for the popup */
+  max-height: 600px; /* Max height for scrollability */
+  overflow-y: auto;
+  border-radius: 8px;
+  box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+h1, h2, h3 {
+  color: #64ffda; /* Accent color for headers */
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #333;
+}
+
+.profile-summary {
+  font-size: 0.9em;
+  color: #bbbbbb;
+  text-align: right;
+}
+
+.controls, .workspace-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+button {
+  flex-grow: 1; /* Allow buttons to grow to fill space */
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background: #0f4c75; /* Dark blue button */
+  color: white;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  white-space: nowrap; /* Prevent text wrapping on buttons */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+button:hover {
+  background: #1b6ca8; /* Lighter blue on hover */
+}
+
+button:active {
+  background: #0a3d5e;
+  transform: translateY(1px); /* Slight press effect */
+}
+
+/* Section Styling */
+.workspace-section, .tabs-section, .review-section, .insights-section, .settings-section {
+  background: #2a2a4a; /* Slightly lighter background for sections */
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* List Styling (UL, LI) */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  background: #3a3a5a; /* Even lighter background for list items */
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  font-size: 0.9em;
+  transition: background-color 0.2s ease;
+}
+
+li:last-child {
+  margin-bottom: 0;
+}
+
+li.placeholder-item {
+  color: #999;
+  font-style: italic;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Tab Group Header */
+.tab-group-header {
+  background: #4a4a7a; /* Distinct background for group headers */
+  color: #fff;
+  font-weight: bold;
+  padding: 8px 12px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+}
+.tab-group-header h3 {
+    margin: 0;
+    color: inherit;
+}
+
+/* Individual Tab Item */
+.tab-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  background: #3e3e6b; /* Slightly different background for individual tabs */
+  border: 1px solid #4a4a7a;
+}
+.tab-item:hover {
+    background-color: #4a4a7a;
+}
+
+.tab-item .favicon {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  vertical-align: middle;
+  border-radius: 2px;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+.tab-item .tab-title {
+  flex-grow: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 10px;
+  color: #e0e0e0;
+}
+
+.tab-category, .tab-workspace {
+  font-size: 0.8em;
+  color: #e0e0e0;
+  background: #555588;
+  padding: 3px 7px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0; /* Prevent shrinking */
+  margin-left: 5px;
+}
+
+.edit-category-btn, .assign-workspace-btn {
+  background: none;
+  border: none;
+  color: #a4ffeb; /* Accent color */
+  font-size: 1.1em;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  transition: color 0.2s ease;
+  display: inline-flex; /* Ensure it behaves correctly */
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-category-btn:hover, .assign-workspace-btn:hover {
+  color: #d4fff5;
+}
+
+/* Chart Styling */
+canvas {
+  max-width: 100%;
+  height: auto;
+  margin: 15px 0;
+}
+
+/* Dropdown Selects (for category/workspace assignment) */
+select {
+  padding: 8px;
+  border-radius: 5px;
+  background: #3a3a5a;
+  color: #e0e0e0;
+  border: 1px solid #555;
+  width: 100%; /* For general selects */
+  box-sizing: border-box; /* Include padding/border in width */
+  margin-top: 5px;
+  -webkit-appearance: none; /* Remove default arrow on WebKit browsers */
+  -moz-appearance: none; /* Remove default arrow on Firefox */
+  appearance: none;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%3E%3Cpolygon%20fill%3D%22%23cccccc%22%20points%3D%220%2C64%20128%2C192%20256%2C64%22%2F%3E%3C%2Fsvg%3E'); /* Custom arrow */
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 12px;
+}
+select:focus {
+    outline: none;
+    border-color: #64ffda;
+    box-shadow: 0 0 0 2px rgba(100, 255, 218, 0.3);
+}
+
+/* Absolute positioned dropdowns for editing */
+.category-edit-dropdown, .workspace-assign-dropdown {
+  position: absolute;
+  z-index: 1000;
+  background: #3a3a5a;
+  border: 1px solid #64ffda;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  padding: 5px;
+  min-width: 180px;
+  max-height: 200px;
+  overflow-y: auto;
+  color: #e0e0e0;
+}
+
+.category-edit-dropdown option, .workspace-assign-dropdown option {
+  padding: 8px 10px;
+  background: #3a3a5a;
+  color: #e0e0e0;
+  border-bottom: 1px solid #4a4a7a;
+}
+
+.category-edit-dropdown option:last-child, .workspace-assign-dropdown option:last-child {
+  border-bottom: none;
+}
+
+.category-edit-dropdown option:hover, .workspace-assign-dropdown option:hover {
+  background: #4a4a7a;
+  cursor: pointer;
+}
+
+/* Review list specific styling */
+.review-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+.review-item span {
+    word-break: break-all; /* Ensures long URLs break and don't overflow */
+    margin-bottom: 5px;
+}
+.review-item select {
+    width: auto; /* Override 100% for better layout in list */
+    margin-right: 10px;
+    flex-grow: 0;
+}
+.review-item button {
+    width: auto;
+    padding: 5px 10px;
+    font-size: 0.8em;
+    flex-shrink: 0;
+}
+.review-item div { /* To group select and button */
+    display: flex;
+    align-items: center;
+    width: 100%;
+}

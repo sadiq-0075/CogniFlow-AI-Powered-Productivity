@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CogniFlow - Settings</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { background: #1a1a2e; color: #e0e0e0; padding: 20px; max-width: 800px; margin: auto; }
+        h1, h2 { color: #64ffda; }
+        .settings-section-container {
+            background: #2a2a4a;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .setting-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #3a3a5a;
+        }
+        .setting-item:last-child { border-bottom: none; }
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+        .rule-item {
+            background: #3a3a5a;
+            padding: 10px;
+            margin-bottom: 8px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .rule-item button { margin-left: 10px; background: #ff6384; }
+        .rule-item button:hover { background: #e05273; }
+        input[type="text"], select {
+            background: #3a3a5a;
+            border: 1px solid #555;
+            color: #e0e0e0;
+            padding: 8px;
+            border-radius: 5px;
+            margin-right: 5px;
+        }
+        .add-rule-form {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>CogniFlow Settings</h1>
+
+    <div class="settings-section-container">
+        <h2>General Settings</h2>
+        <div class="setting-item">
+            <span>Enable Focus Mode Notifications:</span>
+            <input type="checkbox" id="enableFocusNotifs">
+        </div>
+        <div class="setting-item">
+            <span>Show AI Confidence Score (Debug):</span>
+            <input type="checkbox" id="showAIConfidence">
+        </div>
+        </div>
+
+    <div class="settings-section-container">
+        <h2>Custom Categories</h2>
+        <div id="customCategoryList">
+            </div>
+        <div class="add-rule-form">
+            <input type="text" id="newCategoryName" placeholder="New category name">
+            <button id="addCategoryBtn">Add Category</button>
+        </div>
+    </div>
+
+    <div class="settings-section-container">
+        <h2>User-Defined Rules (AI Override)</h2>
+        <p>Define rules to explicitly categorize domains or URLs. These override AI's classification.</p>
+        <div id="userDefinedRulesList">
+            </div>
+        <div class="add-rule-form">
+            <input type="text" id="newRulePattern" placeholder="e.g., example.com or *.google.com/docs/*">
+            <select id="newRuleCategory">
+                <option value="">Select Category</option>
+                <option value="Work">Work</option>
+                <option value="Social">Social</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Learning">Learning</option>
+                <option value="Shopping">Shopping</option>
+                <option value="Neutral">Neutral</option>
+                </select>
+            <button id="addRuleBtn">Add Rule</button>
+        </div>
+    </div>
+
+    <script src="settings.js"></script> </body>
+</html>

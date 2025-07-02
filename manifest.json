@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "CogniFlow",
+  "version": "1.0",
+  "description": "Adaptive productivity co-pilot with AI-driven categorization, workspace management, and focus nudges.",
+  "permissions": [
+    "tabs",
+    "storage",
+    "notifications",
+    "scripting",
+    "history",
+    "activeTab"
+  ],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["mindful_pause.html", "icons/*", "tfjs_models/*", "history.html", "settings.html"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

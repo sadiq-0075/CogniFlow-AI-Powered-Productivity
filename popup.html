@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CogniFlow</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+</head>
+<body>
+  <div class="header">
+    <h1>CogniFlow</h1>
+    <div class="profile-summary">
+      <span id="currentFocusGoal">Goal: Not set</span>
+      <span id="overallProductivityScore">Score: --/100</span>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button id="setGoalBtn">Set Goal</button>
+    <button id="toggleFocusMode">Toggle Focus Mode</button>
+    <button id="analyzeSession">Analyze Session</button>
+  </div>
+
+  <div class="workspace-section">
+    <h2>Workspaces</h2>
+    <div id="workspacesContainer">
+      </div>
+    <div class="workspace-actions">
+      <button id="createNewWorkspace">Create New</button>
+      <button id="oneClickCleanup">Cleanup Distractions</button>
+    </div>
+  </div>
+
+  <div class="tabs-section">
+    <h2>Open Tabs (<span id="openTabsCount">0</span>)</h2>
+    <ul id="openTabsList">
+      <li class="placeholder-item">Loading tabs...</li>
+    </ul>
+  </div>
+
+  <div class="review-section">
+    <h2>Sites to Review (<span id="reviewCount">0</span>)</h2>
+    <ul id="reviewList">
+      <li class="placeholder-item">No sites awaiting review.</li>
+    </ul>
+  </div>
+
+  <div class="insights-section">
+    <h2>Session Insights</h2>
+    <canvas id="categoryChart"></canvas>
+    <div id="sessionDetails">
+      <p>Click 'Analyze Session' for current insights.</p>
+    </div>
+    <button id="viewHistoryBtn">View Full History</button>
+  </div>
+
+  <div class="settings-section">
+    <h2>Settings</h2>
+    <button id="openSettingsBtn">Open Settings</button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
